@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="images/black.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softnio Watch Shop</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <main>
+        <div class="lg:flex justify-center items-center gap-12 p-8 md:p-28 roboto">
+
+            <!-- Image -->
+
+            <div class="lg:w-1/2">
+                <img src="images/purple.jpg" alt="" />
+            </div>
+
+            <!-- Band Color -->
+
+            <!-- <div className='flex justify-center items-center gap-4 mt-4 lg:hidden'>
+                <button onClick={()=> handleColorChange('purple')} className={selectedColor === 'purple' && 'border-[3px]
+                    border-[#816BFF] rounded-full p-[2px]'}><p className='bg-[#816BFF] p-2 rounded-full'></p></button>
+    
+                <button onClick={()=> handleColorChange('cyan')} className={selectedColor === 'cyan' && 'border-[3px]
+                    border-[#1FCEC9] rounded-full p-[2px]'}><p className='bg-[#1FCEC9] p-2 rounded-full'></p></button>
+    
+                <button onClick={()=> handleColorChange('blue')} className={selectedColor === 'blue' && 'border-[3px]
+                    border-[#4B97D3] rounded-full p-[2px]'}><p className='bg-[#4B97D3] p-2 rounded-full'></p></button>
+    
+                <button onClick={()=> handleColorChange('black')} className={selectedColor === 'black' && 'border-[3px]
+                    border-[#3B4747] rounded-full p-[2px]'}><p className='bg-[#3B4747] p-2 rounded-full'></p></button>
+            </div> -->
+
+            <!-- Description -->
+
+            <div class="lg:w-1/2 mt-10 lg:mt-0">
+                <h1 class="text-4xl font-bold text-[#364A63]">Classy Modern Smart Watch</h1>
+                <div class="flex items-center gap-2 mt-4">
+                    <StarRatings rating={3.5} starRatedColor='#FFD200' starDimension='24px' starSpacing='4px' />
+                    <p class="text-[#8091A7]">(2 Reviews)</p>
+                </div>
+
+                <!-- <p className='my-4'><strike className="text-xl text-[#8091A7]">$99.00</strike> <span className={state===0 ?
+                        selectedColor==='purple' ? 'text-2xl text-[#816BFF] font-bold' : selectedColor==='cyan'
+                        ? 'text-2xl text-[#1FCEC9] font-bold' : selectedColor==='blue' ? 'text-2xl text-[#4B97D3] font-bold'
+                        : selectedColor==='black' ? 'text-2xl text-[#3B4747] font-bold'
+                        : 'text-2xl text-[#816BFF] font-bold' : 'text-2xl text-[#816BFF] font-bold' }>
+                        {state === 0 ? selectedSize === 'S' ? '$69.00' : selectedSize === 'M' ? '$79.00' : selectedSize ===
+                        'L' ? '$89.00' : selectedSize === 'XL' ? '$99.00' : '$69.00' : '$69.00'}
+                    </span></p> -->
+
+                <p class="text-[#8091A7] text-lg">I must explain to you how all this mistaken idea of denouncing ple
+                    praising pain was born and I will give you a complete account of the system, and expound the actual
+                    teaching.</p>
+
+                <div class="flex gap-8 my-4">
+                    <div>
+                        <p class="text-[#8091A7]">Type</p>
+                        <p class="text-[#364A63] font-bold text-lg">Watch</p>
+                    </div>
+                    <div>
+                        <p class="text-[#8091A7]">Model Number</p>
+                        <p class="text-[#364A63] font-bold text-lg">Forerunner 290XT</p>
+                    </div>
+                </div>
+
+                <!-- Band color -->
+
+                <h2 class="text-[#364A63] font-bold text-lg">Band Color</h2>
+                <div class="flex gap-4 my-2">
+                    <button onclick="handlePurpleColor()" id="purple">
+                        <p class="bg-[#816BFF] p-2 rounded-full"></p>
+                    </button>
+
+                    <button onclick="handleCyanColor()" id="cyan">
+                        <p class="bg-[#1FCEC9] p-2 rounded-full"></p>
+                    </button>
+
+                    <button onclick="handleBlueColor()" id="blue">
+                        <p class="bg-[#4B97D3] p-2 rounded-full"></p>
+                    </button>
+
+                    <button onclick="handleBlackColor()" id="black">
+                        <p class="bg-[#3B4747] p-2 rounded-full"></p>
+                    </button>
+                </div>
+
+                <!-- Wrist Size -->
+
+                <h2 class="text-[#364A63] font-bold text-lg">Wrist Size</h2>
+                <!-- <div className='flex gap-2 md:gap-4 my-4'>
+                    <button onClick={()=> handleWatchSize('S')} className={selectedSize === 'S' ? 'border-2 rounded-md px-4
+                        py-2 border-[#816BFF]' : 'border-2 rounded-md px-4 py-2 hover:border-[#816BFF]'}><span
+                            className={selectedSize==='S' ? 'font-bold text-[#816BFF]'
+                            : 'font-bold text-black hover:text-[#816BFF]' }>S</span> $69</button>
+    
+                    <button onClick={()=> handleWatchSize('M')} className={selectedSize === 'M' ? 'border-2 rounded-md px-4
+                        py-2 border-[#1FCEC9]' : 'border-2 rounded-md px-4 py-2 hover:border-[#1FCEC9]'}><span
+                            className={selectedSize==='M' ? 'font-bold text-[#1FCEC9]'
+                            : 'font-bold text-black hover:text-[#1FCEC9]' }>M</span> $79</button>
+    
+                    <button onClick={()=> handleWatchSize('L')} className={selectedSize === 'L' ? 'border-2 rounded-md px-4
+                        py-2 border-[#4B97D3]' : 'border-2 rounded-md px-4 py-2 hover:border-[#4B97D3]'}><span
+                            className={selectedSize==='L' ? 'font-bold text-[#4B97D3]'
+                            : 'font-bold text-black hover:text-[#4B97D3]' }>L</span> $89</button>
+    
+                    <button onClick={()=> handleWatchSize('XL')} className={selectedSize === 'XL' ? 'border-2 rounded-md
+                        px-4 py-2 border-[#3B4747]' : 'border-2 rounded-md px-4 py-2 hover:border-[#3B4747]'}><span
+                            className={selectedSize==='XL' ? 'font-bold text-[#3B4747]'
+                            : 'font-bold text-black hover:text-[#3B4747]' }>XL</span> $99</button>
+                </div> -->
+
+                <!-- Add To Cart -->
+
+                <!-- <div className='md:flex items-center gap-4'>
+                    <div>
+                        <button onClick={handleDeleteItem} className='border-2 rounded-l-md px-4 py-2'>-</button>
+                        {
+                        selectedColor === 'purple' ?
+                        selectedSize === 'S' ?
+                        <button className='border-y-2 px-6 py-2'>{purpleSItemNumber}</button> :
+                        selectedSize === 'M' ?
+                        <button className='border-y-2 px-6 py-2'>{purpleMItemNumber}</button> :
+                        selectedSize === 'L' ?
+                        <button className='border-y-2 px-6 py-2'>{purpleLItemNumber}</button> :
+                        selectedSize === 'XL' ?
+                        <button className='border-y-2 px-6 py-2'>{purpleXLItemNumber}</button> :
+                        <></> : <></>
+                        }
+                        {
+                        selectedColor === 'cyan' ?
+                        selectedSize === 'S' ?
+                        <button className='border-y-2 px-6 py-2'>{cyanSItemNumber}</button> :
+                        selectedSize === 'M' ?
+                        <button className='border-y-2 px-6 py-2'>{cyanMItemNumber}</button> :
+                        selectedSize === 'L' ?
+                        <button className='border-y-2 px-6 py-2'>{cyanLItemNumber}</button> :
+                        selectedSize === 'XL' ?
+                        <button className='border-y-2 px-6 py-2'>{cyanXLItemNumber}</button> :
+                        <></> : <></>
+                        }
+                        {
+                        selectedColor === 'blue' ?
+                        selectedSize === 'S' ?
+                        <button className='border-y-2 px-6 py-2'>{blueSItemNumber}</button> :
+                        selectedSize === 'M' ?
+                        <button className='border-y-2 px-6 py-2'>{blueMItemNumber}</button> :
+                        selectedSize === 'L' ?
+                        <button className='border-y-2 px-6 py-2'>{blueLItemNumber}</button> :
+                        selectedSize === 'XL' ?
+                        <button className='border-y-2 px-6 py-2'>{blueXLItemNumber}</button> :
+                        <></> : <></>
+                        }
+                        {
+                        selectedColor === 'black' ?
+                        selectedSize === 'S' ?
+                        <button className='border-y-2 px-6 py-2'>{blackSItemNumber}</button> :
+                        selectedSize === 'M' ?
+                        <button className='border-y-2 px-6 py-2'>{blackMItemNumber}</button> :
+                        selectedSize === 'L' ?
+                        <button className='border-y-2 px-6 py-2'>{blackLItemNumber}</button> :
+                        selectedSize === 'XL' ?
+                        <button className='border-y-2 px-6 py-2'>{blackXLItemNumber}</button> :
+                        <></> : <></>
+                        }
+                        <button onClick={handleAddItem} className='border-2 rounded-r-md px-4 py-2'>+</button>
+                    </div>
+                    <button onClick={handleAddToCart}
+                        className='bg-[#6576FF] rounded-md text-white font-semibold px-4 py-2 my-4 md:my-0'>Add to
+                        Cart</button>
+                    <span className='text-[#816BFF]'>
+                        <FaRegHeart />
+                    </span>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Check Out -->
+
+        <!-- {
+        active &&
+        <div className='flex justify-center animate-bounce mb-20 roboto'>
+            <button className='bg-[#FFBB5A] text-[#364A63] font-bold rounded-3xl py-3 px-6' onClick={()=>
+                document.getElementById('my_modal_5').showModal()}>Checkout <button
+                    className='bg-white text-black px-2 rounded-lg'>{itemNumber}</button></button>
+            <CheckOut addedItems={addedItems}></CheckOut>
+        </div>
+        } -->
+    </main>
+    <script src="scripts/watch-color.js"></script>
+</body>
+
+</html>
