@@ -1,8 +1,9 @@
+const S = document.getElementById('S')
+const M = document.getElementById('M')
+const L = document.getElementById('L')
+const XL = document.getElementById('XL')
+
 function handleSSize() {
-    const S = document.getElementById('S')
-    const M = document.getElementById('M')
-    const L = document.getElementById('L')
-    const XL = document.getElementById('XL')
 
     S.classList.add('border-[#816BFF]', 'text-[#816BFF]')
     M.classList.remove('border-[#816BFF]', 'text-[#816BFF]')
@@ -11,10 +12,6 @@ function handleSSize() {
 }
 
 function handleMSize() {
-    const S = document.getElementById('S')
-    const M = document.getElementById('M')
-    const L = document.getElementById('L')
-    const XL = document.getElementById('XL')
 
     S.classList.remove('border-[#816BFF]', 'text-[#816BFF]')
     M.classList.add('border-[#816BFF]', 'text-[#816BFF]')
@@ -23,10 +20,6 @@ function handleMSize() {
 }
 
 function handleLSize() {
-    const S = document.getElementById('S')
-    const M = document.getElementById('M')
-    const L = document.getElementById('L')
-    const XL = document.getElementById('XL')
 
     S.classList.remove('border-[#816BFF]', 'text-[#816BFF]')
     M.classList.remove('border-[#816BFF]', 'text-[#816BFF]')
@@ -35,10 +28,6 @@ function handleLSize() {
 }
 
 function handleXLSize() {
-    const S = document.getElementById('S')
-    const M = document.getElementById('M')
-    const L = document.getElementById('L')
-    const XL = document.getElementById('XL')
 
     S.classList.remove('border-[#816BFF]', 'text-[#816BFF]')
     M.classList.remove('border-[#816BFF]', 'text-[#816BFF]')

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Softnio Watch Shop</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.9.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="style.css">
@@ -130,17 +130,76 @@
         </div>
 
         <!-- Check Out -->
-        <!-- onClick={()=> document.getElementById('my_modal_5').showModal()} -->
-        <div
-            id="checkOut" class="hidden flex justify-center w-[150px] rounded-3xl mx-auto bg-[#FFBB5A] animate-bounce px-6 py-3 mb-20 roboto">
-            <button class="text-[#364A63] font-bold px-2">Checkout <button id="checkOutItem"
-                    class="bg-white text-black px-2 rounded-lg">0</button></button>
-            <!-- <CheckOut addedItems={addedItems}></CheckOut> -->
+
+        <div id="checkOut" class="hidden flex justify-center animate-bounce mb-20 roboto">
+            <label for="my_modal_6" class="btn bg-[#FFBB5A] rounded-3xl"><button
+                    class="text-[#364A63] font-bold px-2">Checkout <button id="checkOutItem"
+                        class="bg-white text-black px-2 py-2 rounded-lg">0</button></button></label>
         </div>
+        <input type="checkbox" id="my_modal_6" class="modal-toggle" />
+        <div class="modal" role="dialog">
+            <div class="modal-box">
+                <h3 class="text-lg font-bold">Your Cart</h3>
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <!-- head -->
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Color</th>
+                                <th>Size</th>
+                                <th>Qnt</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- row -->
+                            <tr class="text-black">
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="avatar">
+                                            <div class="mask mask-squircle rounded-none h-10 w-10">
+                                                <img src="" alt="" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm text-black font-semibold opacity-50">
+                                                {item.productName}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>{item.color}</td>
+                                <td>{itemInfo.size}</td>
+                                <td>{itemInfo.qnt}</td>
+                                <td>${itemInfo.price}</td>
+                            </tr>
+                        </tbody>
+                        <!-- foot -->
+                        <tfoot>
+                            <tr className='text-black font-bold text-base'>
+                                <th>Total</th>
+                                <th></th>
+                                <th></th>
+                                <th>{totalProduct}</th>
+                                <th>${totalPrice}</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <button class="btn btn-outline mr-4">Continue Shopping</button>
+                        <button onclick="handleCheckOut()" class="btn bg-[#6576FF] text-white">Checkout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </main>
     <script src="scripts/watch-color.js"></script>
     <script src="scripts/watch-size.js"></script>
     <script src="scripts/add-delete-item.js"></script>
+    <script src="scripts/add-function.js"></script>
 </body>
 
 </html>

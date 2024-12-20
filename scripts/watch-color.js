@@ -1,6 +1,11 @@
+const purple = document.getElementById('purple');
+const cyan = document.getElementById('cyan');
+const blue = document.getElementById('blue');
+const black = document.getElementById('black');
+const image = document.getElementById('watchImage');
+const priceColor = document.getElementById('priceColor');
 
-function handlePurpleColor() {
-    const rating = 3.5;
+function handleRating(rating) {
 
     const starRatingContainer = document.querySelector('.star-rating');
     const stars = starRatingContainer.querySelectorAll('.star');
@@ -14,13 +19,10 @@ function handlePurpleColor() {
             stars[i].classList.remove('text-[#FFD200]');
         }
     }
+}
 
-    const purple = document.getElementById('purple');
-    const cyan = document.getElementById('cyan');
-    const blue = document.getElementById('blue');
-    const black = document.getElementById('black');
-    const image = document.getElementById('watchImage');
-    const priceColor = document.getElementById('priceColor');
+function handlePurpleColor() {
+    handleRating(3.5)
 
     purple.classList.add('border-[3px]', 'border-[#816BFF]', 'rounded-full', 'p-[2px]')
     cyan.classList.remove('border-[3px]', 'border-[#1FCEC9]', 'rounded-full', 'p-[2px]')
@@ -32,27 +34,7 @@ function handlePurpleColor() {
 };
 
 function handleCyanColor() {
-    const rating = 4.5;
-
-    const starRatingContainer = document.querySelector('.star-rating');
-    const stars = starRatingContainer.querySelectorAll('.star');
-
-    for (let i = 0; i < stars.length; i++) {
-        if (i < Math.floor(rating)) {
-            stars[i].classList.add('text-[#FFD200]');
-        } else if (i === Math.floor(rating) && rating % 1 !== 0) {
-            stars[i].classList.add('text-[#FFD200]');
-        } else {
-            stars[i].classList.remove('text-[#FFD200]');
-        }
-    }
-
-    const purple = document.getElementById('purple');
-    const cyan = document.getElementById('cyan');
-    const blue = document.getElementById('blue');
-    const black = document.getElementById('black');
-    const image = document.getElementById('watchImage');
-    const priceColor = document.getElementById('priceColor');
+    handleRating(4.5)
 
     purple.classList.remove('border-[3px]', 'border-[#816BFF]', 'rounded-full', 'p-[2px]')
     cyan.classList.add('border-[3px]', 'border-[#1FCEC9]', 'rounded-full', 'p-[2px]')
@@ -63,27 +45,7 @@ function handleCyanColor() {
 }
 
 function handleBlueColor() {
-    const rating = 5;
-
-    const starRatingContainer = document.querySelector('.star-rating');
-    const stars = starRatingContainer.querySelectorAll('.star');
-
-    for (let i = 0; i < stars.length; i++) {
-        if (i < Math.floor(rating)) {
-            stars[i].classList.add('text-[#FFD200]');
-        } else if (i === Math.floor(rating) && rating % 1 !== 0) {
-            stars[i].classList.add('text-[#FFD200]');
-        } else {
-            stars[i].classList.remove('text-[#FFD200]');
-        }
-    }
-
-    const purple = document.getElementById('purple');
-    const cyan = document.getElementById('cyan');
-    const blue = document.getElementById('blue');
-    const black = document.getElementById('black');
-    const image = document.getElementById('watchImage');
-    const priceColor = document.getElementById('priceColor');
+    handleRating(5)
 
     purple.classList.remove('border-[3px]', 'border-[#816BFF]', 'rounded-full', 'p-[2px]')
     cyan.classList.remove('border-[3px]', 'border-[#1FCEC9]', 'rounded-full', 'p-[2px]')
@@ -94,27 +56,7 @@ function handleBlueColor() {
 }
 
 function handleBlackColor() {
-    const rating = 3;
-
-    const starRatingContainer = document.querySelector('.star-rating');
-    const stars = starRatingContainer.querySelectorAll('.star');
-
-    for (let i = 0; i < stars.length; i++) {
-        if (i < Math.floor(rating)) {
-            stars[i].classList.add('text-[#FFD200]');
-        } else if (i === Math.floor(rating) && rating % 1 !== 0) {
-            stars[i].classList.add('text-[#FFD200]');
-        } else {
-            stars[i].classList.remove('text-[#FFD200]');
-        }
-    }
-
-    const purple = document.getElementById('purple');
-    const cyan = document.getElementById('cyan');
-    const blue = document.getElementById('blue');
-    const black = document.getElementById('black');
-    const image = document.getElementById('watchImage');
-    const priceColor = document.getElementById('priceColor');
+    handleRating(3)
 
     purple.classList.remove('border-[3px]', 'border-[#816BFF]', 'rounded-full', 'p-[2px]')
     cyan.classList.remove('border-[3px]', 'border-[#1FCEC9]', 'rounded-full', 'p-[2px]')

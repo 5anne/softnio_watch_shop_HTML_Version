@@ -27,5 +27,8 @@ function handleAddToCart() {
         alert('Please, Add Item at first!')
         document.getElementById('checkOut').classList.add('hidden');
     }
+}
 
+function handleCheckOut() {
+    window.location.reload();
 }
