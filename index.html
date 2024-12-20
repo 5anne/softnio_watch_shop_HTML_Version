@@ -24,7 +24,7 @@
             <!-- Image -->
 
             <div class="lg:w-1/2">
-                <img id="watchImage" src="images/purple.jpg" alt="" />
+                <img id="watchImage" class="rounded-lg" src="images/purple.jpg" alt="" />
             </div>
 
             <!-- Description -->
@@ -46,9 +46,6 @@
                 <p class="my-4"><span class="text-xl text-[#8091A7] line-through">$99.00</span>
                     <span id="priceColor" class="text-2xl text-[#816BFF] font-bold">
                         $69.00
-                        <!-- {state === 0 ? selectedSize === 'S' ? '$69.00' : selectedSize === 'M' ? '$79.00' : selectedSize
-                        ===
-                        'L' ? '$89.00' : selectedSize === 'XL' ? '$99.00' : '$69.00' : '$69.00'} -->
                     </span>
                 </p>
 
@@ -73,19 +70,19 @@
                 <div class="flex gap-4 my-2">
                     <button onclick="handlePurpleColor()" id="purple"
                         class="border-[3px] border-[#816BFF] rounded-full p-[2px]">
-                        <p class="bg-[#816BFF] p-2 rounded-full"></p>
+                        <p class="bg-[#816BFF] p-2 rounded-full text-[1px] text-[#816BFF]">p</p>
                     </button>
 
                     <button onclick="handleCyanColor()" id="cyan">
-                        <p class="bg-[#1FCEC9] p-2 rounded-full"></p>
+                        <p class="bg-[#1FCEC9] p-2 rounded-full text-[1px] text-[#1FCEC9]">c</p>
                     </button>
 
                     <button onclick="handleBlueColor()" id="blue">
-                        <p class="bg-[#4B97D3] p-2 rounded-full"></p>
+                        <p class="bg-[#4B97D3] p-2 rounded-full text-[1px] text-[#4B97D3]">b</p>
                     </button>
 
                     <button onclick="handleBlackColor()" id="black">
-                        <p class="bg-[#3B4747] p-2 rounded-full"></p>
+                        <p class="bg-[#3B4747] p-2 rounded-full text-[1px] text-[#3B4747]">k</p>
                     </button>
                 </div>
 
@@ -95,18 +92,19 @@
                 <div className='flex gap-2 md:gap-4 my-4'>
                     <button onclick="handleSSize()" id="S"
                         class="border-2 rounded-md px-4 py-2 text-[#816BFF] border-[#816BFF] hover:border-[#816BFF]"><span
-                            class="font-bold hover:text-[#816BFF]">S</span> <span class="text-black">$69</span></button>
+                            id="sizeS" class="font-bold hover:text-[#816BFF]">S</span> <span
+                            class="text-black">$69</span></button>
 
                     <button onclick="handleMSize()" id="M"
-                        class="border-2 rounded-md px-4 py-2 hover:border-[#816BFF]"><span
+                        class="border-2 rounded-md px-4 py-2 hover:border-[#816BFF]"><span id="sizeM"
                             class="font-bold hover:text-[#816BFF]">M</span> <span class="text-black">$79</span></button>
 
                     <button onclick="handleLSize()" id="L"
-                        class="border-2 rounded-md px-4 py-2 hover:border-[#816BFF]"><span
+                        class="border-2 rounded-md px-4 py-2 hover:border-[#816BFF]"><span id="sizeL"
                             class="font-bold hover:text-[#816BFF]">L</span> <span class="text-black">$89</span></button>
 
                     <button onclick="handleXLSize()" id="XL"
-                        class="border-2 rounded-md px-4 py-2 hover:border-[#816BFF]"><span
+                        class="border-2 rounded-md px-4 py-2 hover:border-[#816BFF]"><span id="sizeXL"
                             class="font-bold hover:text-[#816BFF]">XL</span> <span
                             class="text-black">$99</span></button>
                 </div>
@@ -164,14 +162,14 @@
                                         </div>
                                         <div>
                                             <div class="text-sm text-black font-semibold opacity-50">
-                                                {item.productName}</div>
+                                                Classy Modern Smart Watch</div>
                                         </div>
                                     </div>
                                 </td>
-                                <td>{item.color}</td>
-                                <td>{itemInfo.size}</td>
-                                <td>{itemInfo.qnt}</td>
-                                <td>${itemInfo.price}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>$</td>
                             </tr>
                         </tbody>
                         <!-- foot -->
@@ -180,8 +178,8 @@
                                 <th>Total</th>
                                 <th></th>
                                 <th></th>
-                                <th>{totalProduct}</th>
-                                <th>${totalPrice}</th>
+                                <th>0</th>
+                                <th>$0.00</th>
                             </tr>
                         </tfoot>
                     </table>
