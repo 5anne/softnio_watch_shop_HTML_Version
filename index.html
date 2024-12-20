@@ -94,7 +94,7 @@
                 <h2 class="text-[#364A63] font-bold text-lg my-4">Wrist Size</h2>
                 <div className='flex gap-2 md:gap-4 my-4'>
                     <button onclick="handleSSize()" id="S"
-                        class="border-2 rounded-md px-4 py-2 hover:border-[#816BFF]"><span
+                        class="border-2 rounded-md px-4 py-2 text-[#816BFF] border-[#816BFF] hover:border-[#816BFF]"><span
                             class="font-bold hover:text-[#816BFF]">S</span> <span class="text-black">$69</span></button>
 
                     <button onclick="handleMSize()" id="M"
@@ -116,7 +116,7 @@
                 <div class="md:flex items-center gap-4 mt-4">
                     <div>
                         <button onclick="handleDeleteItem()" class="border-2 rounded-l-md px-4 py-2">-</button>
-                        <button class="border-y-2 px-6 py-2">0</button>
+                        <button id="itemNumber" class="border-y-2 px-6 py-2">0</button>
                         <button onclick="handleAddItem()" class="border-2 rounded-r-md px-4 py-2">+</button>
                     </div>
                     <button onclick="handleAddToCart()"
@@ -130,19 +130,17 @@
         </div>
 
         <!-- Check Out -->
-
-        <!-- {
-        active &&
-        <div className='flex justify-center animate-bounce mb-20 roboto'>
-            <button className='bg-[#FFBB5A] text-[#364A63] font-bold rounded-3xl py-3 px-6' onClick={()=>
-                document.getElementById('my_modal_5').showModal()}>Checkout <button
-                    className='bg-white text-black px-2 rounded-lg'>{itemNumber}</button></button>
-            <CheckOut addedItems={addedItems}></CheckOut>
+        <!-- onClick={()=> document.getElementById('my_modal_5').showModal()} -->
+        <div
+            id="checkOut" class="hidden flex justify-center w-[150px] rounded-3xl mx-auto bg-[#FFBB5A] animate-bounce px-6 py-3 mb-20 roboto">
+            <button class="text-[#364A63] font-bold px-2">Checkout <button id="checkOutItem"
+                    class="bg-white text-black px-2 rounded-lg">0</button></button>
+            <!-- <CheckOut addedItems={addedItems}></CheckOut> -->
         </div>
-        } -->
     </main>
     <script src="scripts/watch-color.js"></script>
     <script src="scripts/watch-size.js"></script>
+    <script src="scripts/add-delete-item.js"></script>
 </body>
 
 </html>
