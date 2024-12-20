@@ -13,6 +13,13 @@ let itemsQuantity = [
     }
 ]
 
+const cartItem = {
+    color: selectedColor,
+    size: selectedSize,
+    quantity: itemsQuantity[0][selectedColor][selectedSize],
+    price: itemsQuantity[0][selectedColor] * 69
+};
+
 colorButtons.forEach(button => {
     button.addEventListener('click', () => {
         const colorValue = button.innerText;
@@ -49,6 +56,19 @@ function handleAddItem() {
     quantity++;
     document.getElementById('itemNumber').textContent = itemsQuantity[0][selectedColor][selectedSize];
     document.getElementById('checkOutItem').textContent = quantity;
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingItemIndex = cart.findIndex(item => item.size === selectedSize);
+
+    if (existingItemIndex !== -1) {
+        cart[existingItemIndex].quantity += quantity;
+    } else {
+        cart.push(cartItem);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
 }
 
 function handleDeleteItem() {
@@ -69,6 +89,7 @@ function handleDeleteItem() {
 function handleAddToCart() {
     if (quantity > 0) {
         document.getElementById('checkOut').classList.remove('hidden');
+        document.getElementById('totalQuantity').textContent = quantity;
     }
     else {
         alert('Please, Add Item at first!')
@@ -77,5 +98,36 @@ function handleAddToCart() {
 }
 
 function handleCheckOut() {
+    alert("Checked Out Successfully!")
     window.location.reload();
+}
+
+const tbody = document.querySelector('tbody');
+
+for (let i = 0; i < 5; i++) {
+    const newRow = document.createElement('tr');
+
+    newRow.innerHTML = `
+    <tr class="text-black">
+    <td>
+    <div class="flex items-center gap-3">
+        <div class="avatar">
+            <div class="mask mask-squircle rounded-none h-10 w-10">
+                <img src="" alt="" />
+            </div>
+        </div>
+        <div>
+            <div class="text-sm text-black font-semibold opacity-50">
+                Classy Modern Smart Watch</div>
+            </div>
+        </div>
+    </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>$</td>
+    </tr>
+`
+
+    tbody.appendChild(newRow);
 }
