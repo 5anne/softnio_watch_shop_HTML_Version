@@ -91,22 +91,22 @@
                 <h2 class="text-[#364A63] font-bold text-lg my-4">Wrist Size</h2>
                 <div className='flex gap-2 md:gap-4 my-4'>
                     <button onclick="handleSSize()" id="S"
-                        class="border-2 rounded-md px-4 py-2 text-[#816BFF] border-[#816BFF] hover:border-[#816BFF]"><span
-                            id="sizeS" class="font-bold hover:text-[#816BFF]">S</span> <span
-                            class="text-black">$69</span></button>
+                        class="border-2 rounded-md px-4 py-2 text-[#816BFF] border-[#816BFF] hover:border-[#816BFF]">
+                        <span class="font-bold hover:text-[#816BFF]">S</span> <span class="text-black">$69</span>
+                    </button>
 
-                    <button onclick="handleMSize()" id="M"
-                        class="border-2 rounded-md px-4 py-2 hover:border-[#816BFF]"><span id="sizeM"
-                            class="font-bold hover:text-[#816BFF]">M</span> <span class="text-black">$79</span></button>
+                    <button onclick="handleMSize()" id="M" class="border-2 rounded-md px-4 py-2 hover:border-[#816BFF]">
+                        <span class="font-bold hover:text-[#816BFF]">M</span> <span class="text-black">$79</span>
+                    </button>
 
-                    <button onclick="handleLSize()" id="L"
-                        class="border-2 rounded-md px-4 py-2 hover:border-[#816BFF]"><span id="sizeL"
-                            class="font-bold hover:text-[#816BFF]">L</span> <span class="text-black">$89</span></button>
+                    <button onclick="handleLSize()" id="L" class="border-2 rounded-md px-4 py-2 hover:border-[#816BFF]">
+                        <span class="font-bold hover:text-[#816BFF]">L</span> <span class="text-black">$89</span>
+                    </button>
 
                     <button onclick="handleXLSize()" id="XL"
-                        class="border-2 rounded-md px-4 py-2 hover:border-[#816BFF]"><span id="sizeXL"
-                            class="font-bold hover:text-[#816BFF]">XL</span> <span
-                            class="text-black">$99</span></button>
+                        class="border-2 rounded-md px-4 py-2 hover:border-[#816BFF]">
+                        <span class="font-bold hover:text-[#816BFF]">XL</span> <span class="text-black">$99</span>
+                    </button>
                 </div>
 
                 <!-- Add To Cart -->
@@ -130,7 +130,7 @@
         <!-- Check Out -->
 
         <div id="checkOut" class="hidden flex justify-center mb-20 roboto">
-            <label for="my_modal_6" class="btn bg-[#FFBB5A] rounded-3xl"><button
+            <label for="my_modal_6" class="btn bg-[#FFBB5A] rounded-3xl"><button id="showModal"
                     class="text-[#364A63] font-bold px-2">Checkout <button id="checkOutItem"
                         class="bg-white text-black px-2 py-2 rounded-lg">0</button></button></label>
         </div>
@@ -160,7 +160,7 @@
                                 <th></th>
                                 <th></th>
                                 <th id="totalQuantity">0</th>
-                                <th id="totalPrice">$0.00</th>
+                                <th>$<span id="totalPrice">0</span>.00</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -178,7 +178,6 @@
     <script src="scripts/watch-color.js"></script>
     <script src="scripts/watch-size.js"></script>
     <script src="scripts/add-delete-item.js"></script>
-    <script src="scripts/add-function.js"></script>
 </body>
 
 </html>

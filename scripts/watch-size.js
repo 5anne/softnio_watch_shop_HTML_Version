@@ -1,16 +1,22 @@
 const sizes = ['S', 'M', 'L', 'XL'];
+const allPrices = {};
 
-const elements = sizes.reduce((acc, size) => {
+const sizeElements = sizes.reduce((acc, size) => {
     acc[size] = document.getElementById(size);
+    allPrices[size] = acc[size].innerText.split(' ')[1];
     return acc;
 }, {});
 
+console.log(sizeElements);
+
 function handleSize(selectedSize) {
+
     sizes.forEach(size => {
         if (size === selectedSize) {
-            elements[size].classList.add('border-[#816BFF]', 'text-[#816BFF]');
+            sizeElements[size].classList.add('border-[#816BFF]', 'text-[#816BFF]');
+            priceColor.innerText = allPrices[selectedSize];
         } else {
-            elements[size].classList.remove('border-[#816BFF]', 'text-[#816BFF]');
+            sizeElements[size].classList.remove('border-[#816BFF]', 'text-[#816BFF]');
         }
     });
 }
