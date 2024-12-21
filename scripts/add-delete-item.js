@@ -8,7 +8,7 @@ let selectedSize = 'S';
 let itemsQuantity = [
     {
         purple: {
-            image: "/images/purple.jpg",
+            image: "https://i.ibb.co.com/c8QZFMm/purple.jpg",
             color: "Purple",
             sizes: {
                 S: { quantity: 0, get price() { return this.quantity * 69; } },
@@ -21,7 +21,7 @@ let itemsQuantity = [
             },
         },
         cyan: {
-            image: "/images/cyan.jpg",
+            image: "https://i.ibb.co.com/HKkfPSP/cyan.jpg",
             color: "Cyan",
             sizes: {
                 S: { quantity: 0, get price() { return this.quantity * 69; } },
@@ -34,7 +34,7 @@ let itemsQuantity = [
             },
         },
         blue: {
-            image: "/images/blue.jpg",
+            image: "https://i.ibb.co.com/6yrwLrp/blue.jpg",
             color: "Blue",
             sizes: {
                 S: { quantity: 0, get price() { return this.quantity * 69; } },
@@ -47,7 +47,7 @@ let itemsQuantity = [
             },
         },
         black: {
-            image: "/images/black.jpg",
+            image: "https://i.ibb.co.com/FD1SFKh/black.jpg",
             color: "Black",
             sizes: {
                 S: { quantity: 0, get price() { return this.quantity * 69; } },
