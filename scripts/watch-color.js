@@ -1,67 +1,66 @@
-const purple = document.getElementById('purple');
-const cyan = document.getElementById('cyan');
-const blue = document.getElementById('blue');
-const black = document.getElementById('black');
+const colors = {
+    purple: { borderColor: '#816BFF', rating: 3.5, image: '/images/purple.jpg' },
+    cyan: { borderColor: '#1FCEC9', rating: 4.5, image: '/images/cyan.jpg' },
+    blue: { borderColor: '#4B97D3', rating: 5, image: '/images/blue.jpg' },
+    black: { borderColor: '#3B4747', rating: 3, image: '/images/black.jpg' },
+};
+
+const elements = {
+    purple: document.getElementById('purple'),
+    cyan: document.getElementById('cyan'),
+    blue: document.getElementById('blue'),
+    black: document.getElementById('black'),
+};
+
 const image = document.getElementById('watchImage');
 const priceColor = document.getElementById('priceColor');
 
 function handleRating(rating) {
-
     const starRatingContainer = document.querySelector('.star-rating');
     const stars = starRatingContainer.querySelectorAll('.star');
 
-    for (let i = 0; i < stars.length; i++) {
-        if (i < Math.floor(rating)) {
-            stars[i].classList.add('text-[#FFD200]');
-        } else if (i === Math.floor(rating) && rating % 1 !== 0) {
-            stars[i].classList.add('text-[#FFD200]');
+    stars.forEach((star, index) => {
+        if (index < Math.floor(rating) || (index === Math.floor(rating) && rating % 1 !== 0)) {
+            star.classList.add('text-[#FFD200]');
         } else {
-            stars[i].classList.remove('text-[#FFD200]');
+            star.classList.remove('text-[#FFD200]');
         }
-    }
+    });
+}
+
+function handleColor(selectedColor) {
+    const { borderColor, rating, image: imgSrc } = colors[selectedColor];
+
+    // Handle rating
+    handleRating(rating);
+
+    // Update styles
+    Object.keys(elements).forEach(color => {
+        if (color === selectedColor) {
+            elements[color].classList.add('border-[3px]', `border-[${borderColor}]`, 'rounded-full', 'p-[2px]');
+            priceColor.classList.add('text-2xl', `text-[${borderColor}]`, 'font-bold');
+        } else {
+            elements[color].classList.remove('border-[3px]', `border-[${colors[color].borderColor}]`, 'rounded-full', 'p-[2px]');
+            priceColor.classList.remove(`text-[${colors[color].borderColor}]`);
+        }
+    });
+
+    // Update image and price color
+    image.src = imgSrc;
 }
 
 function handlePurpleColor() {
-    handleRating(3.5)
-
-    purple.classList.add('border-[3px]', 'border-[#816BFF]', 'rounded-full', 'p-[2px]')
-    cyan.classList.remove('border-[3px]', 'border-[#1FCEC9]', 'rounded-full', 'p-[2px]')
-    blue.classList.remove('border-[3px]', 'border-[#4B97D3]', 'rounded-full', 'p-[2px]')
-    black.classList.remove('border-[3px]', 'border-[#3B4747]', 'rounded-full', 'p-[2px]')
-    priceColor.classList.add('text-[#816BFF]')
-    image.src = '/images/purple.jpg'
-
-};
+    handleColor('purple');
+}
 
 function handleCyanColor() {
-    handleRating(4.5)
-
-    purple.classList.remove('border-[3px]', 'border-[#816BFF]', 'rounded-full', 'p-[2px]')
-    cyan.classList.add('border-[3px]', 'border-[#1FCEC9]', 'rounded-full', 'p-[2px]')
-    blue.classList.remove('border-[3px]', 'border-[#4B97D3]', 'rounded-full', 'p-[2px]')
-    black.classList.remove('border-[3px]', 'border-[#3B4747]', 'rounded-full', 'p-[2px]')
-    priceColor.classList.add('text-[#1FCEC9]')
-    image.src = '/images/cyan.jpg'
+    handleColor('cyan');
 }
 
 function handleBlueColor() {
-    handleRating(5)
-
-    purple.classList.remove('border-[3px]', 'border-[#816BFF]', 'rounded-full', 'p-[2px]')
-    cyan.classList.remove('border-[3px]', 'border-[#1FCEC9]', 'rounded-full', 'p-[2px]')
-    blue.classList.add('border-[3px]', 'border-[#4B97D3]', 'rounded-full', 'p-[2px]')
-    black.classList.remove('border-[3px]', 'border-[#3B4747]', 'rounded-full', 'p-[2px]')
-    priceColor.classList.add('text-[#4B97D3]')
-    image.src = '/images/blue.jpg'
+    handleColor('blue');
 }
 
 function handleBlackColor() {
-    handleRating(3)
-
-    purple.classList.remove('border-[3px]', 'border-[#816BFF]', 'rounded-full', 'p-[2px]')
-    cyan.classList.remove('border-[3px]', 'border-[#1FCEC9]', 'rounded-full', 'p-[2px]')
-    blue.classList.remove('border-[3px]', 'border-[#4B97D3]', 'rounded-full', 'p-[2px]')
-    black.classList.add('border-[3px]', 'border-[#3B4747]', 'rounded-full', 'p-[2px]')
-    priceColor.classList.add('text-[#3B4747]')
-    image.src = '/images/black.jpg'
+    handleColor('black');
 }
