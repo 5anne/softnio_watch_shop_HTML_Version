@@ -152,7 +152,7 @@ showModal.addEventListener('click', () => {
                         price: allSizes[sizeKey].price,
                     }
                     cartItem.push(product);
-                    console.log(cartItem);
+                    // console.log(cartItem);
                 }
             })
         });

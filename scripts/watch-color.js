@@ -1,8 +1,8 @@
 const colors = {
-    purple: { borderColor: '#816BFF', rating: 3.5, image: '/images/purple.jpg' },
-    cyan: { borderColor: '#1FCEC9', rating: 4.5, image: '/images/cyan.jpg' },
-    blue: { borderColor: '#4B97D3', rating: 5, image: '/images/blue.jpg' },
-    black: { borderColor: '#3B4747', rating: 3, image: '/images/black.jpg' },
+    purple: { borderColor: '#816BFF', rating: 3.5, image: 'https://i.ibb.co.com/c8QZFMm/purple.jpg' },
+    cyan: { borderColor: '#1FCEC9', rating: 4.5, image: 'https://i.ibb.co.com/HKkfPSP/cyan.jpg' },
+    blue: { borderColor: '#4B97D3', rating: 5, image: 'https://i.ibb.co.com/6yrwLrp/blue.jpg' },
+    black: { borderColor: '#3B4747', rating: 3, image: 'https://i.ibb.co.com/FD1SFKh/black.jpg' },
 };
 
 const elements = {
@@ -46,6 +46,7 @@ function handleColor(selectedColor) {
     });
 
     // Update image and price color
+    // console.log(imgSrc);
     image.src = imgSrc;
 }
 
