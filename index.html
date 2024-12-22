@@ -129,13 +129,13 @@
 
         <!-- Check Out -->
 
-        <div id="checkOut" class="hidden flex justify-center mb-20 roboto">
-            <label for="my_modal_6" class="btn bg-[#FFBB5A] rounded-3xl"><button id="showModal"
-                    class="text-[#364A63] font-bold px-2">Checkout <button id="checkOutItem"
-                        class="bg-white text-black px-2 py-2 rounded-lg">0</button></button></label>
+        <div id="checkOut" onclick="checkOut()" class="hidden flex justify-center mb-20 roboto">
+            <label for="my_modal_6" class="btn bg-[#FFBB5A] rounded-3xl">
+                <span class="text-[#364A63] font-bold px-2">Checkout <span id="checkOutItem"
+                        class="bg-white text-black px-2 py-[4px] rounded-lg">0</span></span></label>
         </div>
         <input type="checkbox" id="my_modal_6" class="modal-toggle" />
-        <div class="modal" role="dialog">
+        <div id="modal" class="modal" role="dialog">
             <div class="modal-box">
                 <h3 class="text-lg font-bold">Your Cart</h3>
                 <div class="overflow-x-auto">

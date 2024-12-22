@@ -1,6 +1,5 @@
 const sizeButtons = document.querySelectorAll('button[id^="S"], button[id^="M"], button[id^="L"], button[id^="XL"]');
 const colorButtons = document.querySelectorAll('button[id^="purple"], button[id^="cyan"], button[id^="blue"], button[id^="black"]');
-const showModal = document.querySelector('button[id^="showModal"]');
 
 let totalQuantity = 0;
 let selectedColor = 'purple';
@@ -100,7 +99,6 @@ function handleAddItem() {
     totalQuantity++;
     document.getElementById('itemNumber').innerText = itemsQuantity[0][selectedColor].sizes[selectedSize].quantity;
     document.getElementById('checkOutItem').innerText = totalQuantity;
-
 }
 
 function handleDeleteItem() {
@@ -134,7 +132,8 @@ function handleAddToCart() {
 const tbody = document.querySelector('tbody');
 let rowCount = 0;
 
-showModal.addEventListener('click', () => {
+function checkOut() {
+
     const colorObjects = itemsQuantity.map(item => {
 
         const colors = Object.keys(item).map(colorKey => {
@@ -185,7 +184,7 @@ showModal.addEventListener('click', () => {
 
         tbody.appendChild(newRow);
     }
-})
+}
 
 function handleCheckOut() {
     alert("Checked Out Successfully!")
